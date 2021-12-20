@@ -1,16 +1,28 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import MyTable from '../../components/table/MyTable';
-import customerList from '../../assets/JsonData/users-list.json';
+import FormUsuarios from './FormUsuarios';
 
 import '../../components/table/table.css';
-
-import FormUsuarios from './FormUsuarios';
 
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
 const Usuarios = () => {
+
+    const [usuarios, setUsuarios] = React.useState([])
+
+    useEffect(() => {
+        readTipoCultivo()
+    }, []);
+    
+    const readTipoCultivo = () => {
+        fetch('http://localhost:5000/usuarios/')
+            .then((response) => response.json())
+            .then((data) => {
+                setUsuarios(data)
+            });
+    }
 
     const columns = React.useMemo(
         () => [
@@ -41,8 +53,6 @@ const Usuarios = () => {
         []
     )
 
-    const data = React.useMemo(() => customerList, [])
-
     return (
         <div>
             <div className="d-sm-flex align-items-center justify-content-between mb-4">
@@ -58,7 +68,7 @@ const Usuarios = () => {
 
                 <div class="card-body">
                     <div class="table-responsive">
-                        <MyTable columns={columns} data={data} />
+                        <MyTable columns={columns} data={usuarios} />
                     </div>
                 </div>
             </div>
