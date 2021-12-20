@@ -8,9 +8,10 @@ import { FiUserPlus } from "react-icons/fi";
 var md5 = require('md5');
 
 const ModalForm = (props) => {
-    const url = 'http://localhost:5000/usuarios/';
-
+    
     const createUsuario = (e) => {
+
+        const url = 'http://localhost:5000/usuarios/';
 
         e.preventDefault()
 
@@ -36,7 +37,6 @@ const ModalForm = (props) => {
                                         footer: 'Todo correcto'})
                                         
                 );
-
     }
 
     return (
