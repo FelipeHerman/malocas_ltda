@@ -28,10 +28,10 @@ const Footer = () => {
                         <div className=""><b> Ingresos </b></div>
                         <ul className="list-group fs-6">
                             <li className="list-group-item border-white">
-                                <Link style={{ color: 'green', textDecoration: 'none' }} to="/login">Iniciar Sesión</Link>
+                                <Link className="text-decoration-none text-dark" to="/login">Iniciar Sesión</Link>
                             </li>
                             <li className="list-group-item border-white">
-                                <Link style={{ color: 'green', textDecoration: 'none' }} to="/Registro">Registrarse</Link>
+                                <Link className="text-decoration-none text-dark" to="/Registro">Registrarse</Link>
                             </li>
                         </ul>
                     </div>
@@ -49,7 +49,7 @@ const Footer = () => {
                         <b>Malocas Ltda.</b>
                     </div>
                     <div className="col text-end text-muted">
-                        &copy; Sitio web 2021. Todos los derechos reservados.
+                        &copy; Agricola Las Malocas Ltda 2021. All Rights Reserved.
                     </div>
                 </div>
             </div>

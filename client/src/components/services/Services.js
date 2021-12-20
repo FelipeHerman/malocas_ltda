@@ -10,7 +10,7 @@ const Services = () => {
 
     return (
         <section id="servicios">
-            <div className="container px-5">
+            <div className="container px-5 py-4 my-5">
                 <div className="row gx-5 align-items-center">
                     <div className="col-lg-8 order-lg-1 mb-5 mb-lg-0">
                         <div className="container-fluid px-5">
@@ -48,7 +48,7 @@ const Services = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-4 order-lg-0">
+                    <div className="col-lg-4 order-lg-0 d-sm-none d-none d-lg-block">
                         <img src={campo3} alt="" style={{ height: '25rem', width: '25rem', borderRadius: '18px' }}></img>
                     </div>
                 </div>

@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-
 import { Link } from "react-router-dom";
-
 import azada from '../../assets/images/scythe.png';
 import campo6 from '../../assets/images/campo6.jpg';
 
@@ -11,19 +9,17 @@ const Header = () => {
 
     return (
         <div id="header">
-            <nav className="navbar navbar-expand-lg navbar-light fixed-top shadow-sm" id="mainNav">
+            <nav className="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm" id="mainNav">
                 <div className="container px-5">
                     <a className={` ${isActive === "inicio" ? 'navbar-brand py-0 active' : 'navbar-brand py-0'}`} onClick={() => setActive("inicio")} href="#inicio">
                         <img src={azada} alt="azada" style={{ height: '2em', weight: '2em' }} />
                     </a>
                     <h4 className="fw-bold">Malocas</h4>
-
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive"
                         aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                         Menu
                         <i className="bi-list"></i>
                     </button>
-
                     <div className="collapse navbar-collapse" id="navbarResponsive">
                         <ul className="navbar-nav ms-auto me-4 my-3 my-lg-0">
                             <li className="nav-item">
@@ -48,8 +44,7 @@ const Header = () => {
                     </div>
                 </div>
             </nav>
-
-            <header id="inicio" className="masthead">
+            <header id="inicio" className="masthead py-4">
                 <div className="container px-5">
                     <div className="row gx-5 align-items-center">
                         <div className="col-lg-6">
@@ -62,23 +57,22 @@ const Header = () => {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-lg-6">
+                        <div className="col-lg-6 d-sm-none d-none d-lg-block">
                             <img src={campo6} alt="" style={{ height: '25rem', width: '34rem', borderRadius: '18px' }}></img>
                         </div>
                     </div>
                 </div>
             </header>
-
-            <aside className="text-center bg-success">
+            <div className="text-center bg-success py-4 my-5">
                 <div className="container-fluid px-5 pt-0">
                     <div className="row gx-6 justify-content-center">
                         <div className="col-xl-8">
                             <p className="fs-4 text text-white mb-4">"La web de Agricola Las Malocas Ltda está clasificada para brindar a través de un sistema la información de la siembra y recolección de cultivos."</p>
-                            <Link role="button" className="btn btn-success btn-lg mb-4 mb-lg-0 w-25" to="/Registro">Registrarse </Link>
+                            <Link role="button" className="btn btn-success btn-lg mb-4 mb-lg-0 w-auto" to="/Registro">Registrarse </Link>
                         </div>
                     </div>
                 </div>
-            </aside>
+            </div>
         </div>
     )
 }
