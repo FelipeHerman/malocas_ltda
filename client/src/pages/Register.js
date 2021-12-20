@@ -75,7 +75,9 @@ const Register = () => {
                                         <Link to="/"><button className="btn-close" /></Link>
                                     </div>
                                 </div>
-
+                                <div className="pb-3 justify-content-center">
+                                        <p className="fs-3 pt-5 fw-bold">Crear cuenta</p>
+                                    </div>
                                 <Form className="fs-5" id="form_rgstr" onSubmit={handleSubmit(createUsuario)}>
 
                                     <Form.Group className="row mb-3">
@@ -98,39 +100,14 @@ const Register = () => {
                                         placeholder="Repetir Contraseña" name="confirmPassword"/>
                                     </Form.Group>
 
-                                    <Form.Group className="d-grid gap-1 input-group input-group-lg py-3">
+                                    <Form.Group className="d-grid gap-1 py-3">
                                         <Button className="btn btn-success btn-lg rounded-pill" type='submit'>
                                             REGISTRARSE
                                         </Button>
                                     </Form.Group>
 
                                 </Form>
-                                <div className="pb-3 justify-content-center">
-                                        <p className="fs-3 pt-5 fw-bold">Crear cuenta</p>
-                                    </div>
-                                    <Form id="form_rgstr">
-                                        <Form.Group className="row mb-3">
-                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Nombres" name="nombres" />
-                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" />
-                                        </Form.Group>
-                                        <Form.Group className="row mb-3 me-0">
-                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" />
-                                        </Form.Group>
-                                        <Form.Group className="row mb-3 me-0">
-                                            <Form.Control type="email" className="col rounded-pill mx-2 border-success border-2" placeholder="Email" name="email" />
-                                        </Form.Group>
-                                        <Form.Group className="row mb-3">
-                                            <Form.Control type="password" className="col rounded-pill mx-2 border-success border-2" placeholder="Contraseña" name="password" />
-                                            <Form.Control type="password" className="col rounded-pill mx-2 border-success border-2" placeholder="Repetir Contraseña" name="password" />
-                                        </Form.Group>
-                                        <Form.Group className="d-grid gap-1 py-3">
-                                            <button className="btn btn-success rounded-pill col">CREAR</button>
-                                        </Form.Group>
-                                    </Form>
-                                    <hr />
-                                    <div className="text-center">
-                                        <Link className="fs-6 text-success text-decoration-none" to="/login">¡Inicia sesión en Malocas!</Link>
-                                    </div>
+                                
                                 <hr />
                                 <div className="text-center">
                                     <Link className="fs-6 text-success text-decoration-none" to="/login">¡Inicia sesión en Malocas!</Link>
