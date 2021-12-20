@@ -78,23 +78,23 @@ const Register = () => {
 
                                 <Form className="fs-5" id="form_rgstr" onSubmit={handleSubmit(createUsuario)}>
 
-                                    <Form.Group class="input-group mb-3 input-group-lg">
-                                        <Form.Control type="text" className="form-control rounded-pill mx-2 border-success border-2" placeholder="Nombres" name="nombres" {...register('nombres')}/>
+                                    <Form.Group className="row mb-3">
+                                        <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Nombres" name="nombres" {...register('nombres')}/>
 
-                                        <Form.Control type="text" className="form-control rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" {...register('apellidos')}/>
+                                        <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" {...register('apellidos')}/>
                                     </Form.Group>
 
-                                    <Form.Group class="input-group mb-3 input-group-lg">
-                                        <Form.Control type="email" className="form-control rounded-pill mx-2 border-success border-2" placeholder="Email" name="email" {...register('email')}/>
+                                    <Form.Group className="row mb-3 me-0">
+                                        <Form.Control type="email" className="col rounded-pill mx-2 border-success border-2" placeholder="Email" name="email" {...register('email')}/>
                                     </Form.Group>
 
-                                    <Form.Group class="input-group mb-3 input-group-lg">                               
+                                    <Form.Group className="row mb-3">                               
                                         <Form.Control type="password" 
-                                        {...register('password')} className={`form-control rounded-pill mx-2 border-success border-2 ${errors.password ? 'is-invalid' : ''}`}
+                                        {...register('password')} className={`col rounded-pill mx-2 border-success border-2 ${errors.password ? 'is-invalid' : ''}`}
                                         placeholder="Contraseña" name="password"/>
                                         
                                         <Form.Control type="password" 
-                                        {...register('confirmPassword')} className={`form-control rounded-pill mx-2 border-success border-2 ${errors.confirmPassword ? 'is-invalid' : ''}`}
+                                        {...register('confirmPassword')} className={`col rounded-pill mx-2 border-success border-2 ${errors.confirmPassword ? 'is-invalid' : ''}`}
                                         placeholder="Repetir Contraseña" name="confirmPassword"/>
                                     </Form.Group>
 
@@ -105,7 +105,32 @@ const Register = () => {
                                     </Form.Group>
 
                                 </Form>
-
+                                <div className="pb-3 justify-content-center">
+                                        <p className="fs-3 pt-5 fw-bold">Crear cuenta</p>
+                                    </div>
+                                    <Form id="form_rgstr">
+                                        <Form.Group className="row mb-3">
+                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Nombres" name="nombres" />
+                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" />
+                                        </Form.Group>
+                                        <Form.Group className="row mb-3 me-0">
+                                            <Form.Control type="text" className="col rounded-pill mx-2 border-success border-2" placeholder="Apellidos" name="apellidos" />
+                                        </Form.Group>
+                                        <Form.Group className="row mb-3 me-0">
+                                            <Form.Control type="email" className="col rounded-pill mx-2 border-success border-2" placeholder="Email" name="email" />
+                                        </Form.Group>
+                                        <Form.Group className="row mb-3">
+                                            <Form.Control type="password" className="col rounded-pill mx-2 border-success border-2" placeholder="Contraseña" name="password" />
+                                            <Form.Control type="password" className="col rounded-pill mx-2 border-success border-2" placeholder="Repetir Contraseña" name="password" />
+                                        </Form.Group>
+                                        <Form.Group className="d-grid gap-1 py-3">
+                                            <button className="btn btn-success rounded-pill col">CREAR</button>
+                                        </Form.Group>
+                                    </Form>
+                                    <hr />
+                                    <div className="text-center">
+                                        <Link className="fs-6 text-success text-decoration-none" to="/login">¡Inicia sesión en Malocas!</Link>
+                                    </div>
                                 <hr />
                                 <div className="text-center">
                                     <Link className="fs-6 text-success text-decoration-none" to="/login">¡Inicia sesión en Malocas!</Link>
