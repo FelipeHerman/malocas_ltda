@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombres": "Camilo",
+        "apellidos": "Gomez Gomez",
+        "email": "camilogomez@gmail.com",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b"
+    },
+    {
+        "id": 2,
+        "nombres": "Juan",
+        "apellidos": "Perez Perez",
+        "email": "juanperez@gmail.com",
+        "password": "827ccb0eea8a706c4c34a16891f84e7b"
+    }
+]
