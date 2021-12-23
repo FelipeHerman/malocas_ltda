@@ -1,9 +1,6 @@
 import React from 'react';
 
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-
-/* import Dashboard from './dashboard/Dashboard'; */
-import { Usuarios, Predios, Configuracion, TiposCultivos, AsignarCultivos, SiembraCosecha, Reportes, Perfil } from '../pages';
+import { Routes, Route } from 'react-router-dom';
 
 import { Login, Register } from '../pages';
 
@@ -17,8 +14,8 @@ const Rutas = () => (
 
             <Route path="/" element={<LandingPage />} />
 
-            <Route path="/login" element={<Login/>} />
-            <Route path="/registro" element={<Register/>} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/registro" element={<Register />} />
             
             <Route
                 path="dashboard/*"
@@ -28,6 +25,8 @@ const Rutas = () => (
                 </React.Suspense>
                 }
             />
+
+            <Route path="*" element={<LandingPage />} />
             
         </Routes>
     </>

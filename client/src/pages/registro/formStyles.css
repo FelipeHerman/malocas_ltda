@@ -1,0 +1,80 @@
+.containerForm {
+    background-color: #E4FFD2;
+}
+
+/* Coloca el form en el centro */
+.abs-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+/* =========================== */
+
+.myCard2 {
+    width: 650px;
+    background-color: #f1f1f1;
+    border-radius: 10px;
+    box-shadow: 0px 0px 14px 0px rgba(0, 0, 0, 0.84);
+}
+
+.myForm-control {
+    position: relative;
+}
+
+.mySmall {
+    color: #e74c3c;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+}
+
+.myInput {
+    padding: 10px 12px 10px 12px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    margin-top: 2px;
+    max-width: 100%;
+    box-sizing: border-box;
+    color: #2C3E50;
+    font-size: 14px;
+    letter-spacing: 1px;
+    display: block;
+}
+
+.myInput:focus {
+    -moz-box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid #198754;
+    outline-width: 0
+}
+
+.btn-insert,
+.btn-reset {
+    width: 100%;
+    border-radius: 6px
+}
+
+.btn-reset {
+    background: #B42424;
+    color: #fff;
+    border: 0;
+}
+
+.btn-reset:hover {
+    background: #8A0000;
+    color: #fff;
+}
+
+.btn-insert {
+    background: #198754;
+    color: #fff;
+    border: 0;
+}
+
+.btn-insert:hover {
+    background-color: #0F5233;
+    color: #fff;
+}
