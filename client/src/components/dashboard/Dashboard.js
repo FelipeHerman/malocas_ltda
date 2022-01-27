@@ -3,7 +3,7 @@ import React from 'react';
 import { Routes, Route, Outlet } from "react-router-dom";
 
 import {Sidebar, Topbar} from '../';
-import { Usuarios, Predios, Configuracion, TiposCultivos, AsignarCultivos, SiembraCosecha, Reportes, Perfil } from '../../pages';
+import { Usuarios, Predios, Configuracion, TiposCultivos, AsignarCultivos, SiembraCosecha, Reportes, Perfil, UsuariosDos } from '../../pages';
 
 export default function Dashboard() {
     return (

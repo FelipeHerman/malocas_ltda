@@ -27,3 +27,15 @@ export const createUsuarios = async (req, res) => {
         res.status(409).json({ message: error.message });
     }
 }
+
+export const deleteUsuarios = async (req, res) => {
+    const { id } = req.params;
+
+    if (!mongoose.Types.ObjectId.isValid(id)) return res.status(404).send(`No hay usuarios con id: ${id}`);
+
+    await Usuarios.findByIdAndRemove(id);
+
+    res.json({ message: "Usuario eliminado correctamente." });
+}
+
+export default router;

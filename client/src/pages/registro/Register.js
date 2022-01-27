@@ -63,7 +63,9 @@ const Register = () => {
             }).then(res => res.json())
             .catch(error => console.error('Error:', error))
             .then(response => Swal.fire({
+                                icon: 'success',
                                 title: 'Usuario Guardado con éxito',
+                                confirmButtonColor: '#198754',
                                 confirmButtonText: 'OK',
                                 }).then((result) => {
                                     if (result.isConfirmed) {

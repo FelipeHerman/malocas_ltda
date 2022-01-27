@@ -9,16 +9,9 @@ import '../../components/table/table.css';
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
-const TiposCultivos = () => {
+import Swal from 'sweetalert2'
 
-    /* useEffect(() => {
-        fetch('http://localhost:5000/cultivos/')
-            .then((response) => response.json())
-            .then((data) => {
-                setTiposCutivos(data)
-                console.log(data)
-            });
-    }); */
+const TiposCultivos = () => {
 
     const [cultivos, setTiposCutivos] = React.useState([])
 
@@ -26,15 +19,9 @@ const TiposCultivos = () => {
         readTipoCultivo()
     }, []); 
 
-    const readTipoCultivo = () => {
-        /* getData();
-        async function getData() {
-            const response = await fetch("http://localhost:5000/cultivos");
-            const data = await response.json();
 
-            
-            setTiposCutivos(data) ;
-        } */
+    const readTipoCultivo = () => {
+        
         fetch('http://localhost:5000/cultivos/')
             .then((response) => response.json())
             .then((data) => {
@@ -42,17 +29,40 @@ const TiposCultivos = () => {
             });
     }
 
-    const confirmDelete = id => {
+    const deleteTipoCultivo = (id) => {
+        
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, bórralo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Eliminado',
+                        text: "¡Usuario eliminado con éxito!",
+                        confirmButtonColor: '#198754',
+                        confirmButtonText: 'OK',
+                    }).then((result_2) => {
+                        if (result_2.isConfirmed) {
+                            
+                            const deleteUser = async () => {
+                                const response = await fetch(`http://localhost:5000/cultivos/delete/${id}`);
 
-        /* fetch(`http://localhost:5000/cultivos/delete/${id}`, {
-            method: 'DELETE',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-            }).then(response => response.json()) */
+                                const data = await response.json( );
 
-        console.log(id)
-            
+                                console.log(data)
+                            }
+                                
+                            deleteUser()
+                            window.location.reload();
+                        }
+                    })
+                }
+            })
     }
 
     const columns = React.useMemo(
@@ -78,7 +88,7 @@ const TiposCultivos = () => {
                                             <FaEdit/>
                                         </button>
 
-                                        <button type="button" className="button touch delete" onClick={() => confirmDelete(value)}>
+                                        <button type="button" className="button touch delete" onClick={() => deleteTipoCultivo(value)}>
                                             <MdDelete/>
                                         </button>
                                     </>

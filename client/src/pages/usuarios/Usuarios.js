@@ -8,20 +8,59 @@ import '../../components/table/table.css';
 import { FaEdit } from "react-icons/fa";
 import { MdDelete } from "react-icons/md";
 
+import Swal from 'sweetalert2'
+
 const Usuarios = () => {
 
     const [usuarios, setUsuarios] = React.useState([])
 
     useEffect(() => {
-        readTipoCultivo()
+        readUsuario()
     }, []);
     
-    const readTipoCultivo = () => {
+    const readUsuario = () => {
         fetch('http://localhost:5000/usuarios/')
             .then((response) => response.json())
             .then((data) => {
                 setUsuarios(data)
             });
+    }
+
+    const deleteUsuario = (id) => {
+        
+        Swal.fire({
+            title: '¿Estás seguro?',
+            text: "¡No podrás revertir esto!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#198754',
+            cancelButtonColor: '#d33',
+            confirmButtonText: '¡Sí, bórralo!'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                        title: 'Eliminado',
+                        text: "¡Usuario eliminado con éxito!",
+                        confirmButtonColor: '#198754',
+                        confirmButtonText: 'OK',
+                    }).then((result_2) => {
+                        if (result_2.isConfirmed) {
+                            
+                            const deleteUser = async () => {
+                                const response = await fetch(`http://localhost:5000/usuarios/delete/${id}`);
+
+                                const data = await response.json( );
+
+                                console.log(data)
+                            }
+                                
+                            deleteUser()
+                            window.location.reload();
+                        }
+                    })
+                }
+            })
+
     }
 
     const columns = React.useMemo(
@@ -44,10 +83,18 @@ const Usuarios = () => {
                 },
                 {
                     Header: 'Acciones',
-                    Cell:   <div>
-                                <button className="button touch edit"><FaEdit/></button>
-                                <button className="button touch delete"><MdDelete/></button>
-                            </div>,
+                    accessor: '_id',
+                    Cell: ({ cell: { value } }) => {
+                            return <>
+                                        <button type="button" className="button touch edit">
+                                            <FaEdit/>
+                                        </button>
+
+                                        <button type="button" className="button touch delete" onClick={() => deleteUsuario(value)}>
+                                            <MdDelete/>
+                                        </button>
+                                    </>
+                        } 
                 },
             ],
         []

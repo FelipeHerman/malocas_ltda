@@ -31,11 +31,17 @@ const ModalForm = (props) => {
             }
             }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => Swal.fire({icon: 'success', 
-                                        title: 'Agregado', 
-                                        text: 'Usuario agregado correctamente!',
-                                        footer: 'Todo correcto'})
-                                        
+            .then(response => Swal.fire({
+                                icon: 'success',
+                                title: 'Agregado', 
+                                text: 'Usuario agregado con éxito',
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'OK',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.reload();
+                                    } 
+                                })
                 );
     }
 

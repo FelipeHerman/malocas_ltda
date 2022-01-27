@@ -24,12 +24,19 @@ const ModalForm = (props) => {
             }
             }).then(res => res.json())
             .catch(error => console.error('Error:', error))
-            .then(response => Swal.fire({icon: 'success', 
-                                        title: 'Agregado', 
-                                        text: 'Tipo de cultivo agregado correctamente!',
-                                        footer: 'Todo correcto'})
-                                        
+            .then(response => Swal.fire({
+                                icon: 'success',
+                                title: 'Agregado', 
+                                text: 'Cultivo agregado con éxito',
+                                confirmButtonColor: '#198754',
+                                confirmButtonText: 'OK',
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        window.location.reload();
+                                    } 
+                                })
                 );
+            
     }
 
     return (

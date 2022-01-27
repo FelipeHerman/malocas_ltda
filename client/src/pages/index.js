@@ -2,6 +2,7 @@ export { default as Login } from './Login';
 export { default as Register } from './registro/Register';
 
 export { default as Usuarios } from './usuarios/Usuarios';
+export { default as UsuariosDos } from './usuarios/UsuariosDos';
 export { default as Predios } from './predios/Predios';
 export { default as Configuracion } from './configuracion/Configuracion';
 export { default as TiposCultivos } from './tiposDeCultivos/TiposCultivos';
