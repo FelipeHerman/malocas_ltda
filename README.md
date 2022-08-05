@@ -1,6 +1,6 @@
 malocas_ltda
 
-Configuración
+Configuración:
 
 Ejecute los siguientes comandos tanto para el cliente como para el servidor.
 
